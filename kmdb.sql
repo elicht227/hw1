@@ -100,6 +100,8 @@
 .headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
+-- The entities are movies, studios, actors, and characters.
+-- A casting assignment is a relationship across movies, actors, and characters.
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS actors;
@@ -142,11 +144,7 @@ CREATE TABLE casting(
 INSERT INTO studios(studio_name )
 VALUES('Warner Bros');
 
-INSERT INTO movies(
-    movie_title,
-    year_released,
-    MPAA_rating,
-    studio_id)
+INSERT INTO movies(movie_title, year_released, MPAA_rating, studio_id)
 VALUES('Batman Begins','2005','PG-13', 1),
 ('The Dark Knight','2008','PG-13',1),
 ('The Dark Knight Rises','2012','PG-13',1);
@@ -176,6 +174,32 @@ VALUES('Bruce Wayne'),
 ('John Blake'),
 ('Selina Kyle');
 
+.print "Studio List"
+.print "======"
+.print ""
+SELECT * FROM studios;
+.print ""
+
+.print "Movie List"
+.print "======"
+.print ""
+SELECT * FROM movies;
+.print ""
+
+.print "Actor List"
+.print "======"
+.print ""
+SELECT * FROM actors;
+.print ""
+
+.print "Character List"
+.print "======"
+.print ""
+SELECT * FROM characters;
+.print ""
+
+-- Used the foreign IDs from movies, actors, and characters to input data into the casting table
+-- Each combination creates a unique casting mix
 INSERT INTO casting(movie_id, actor_id, character_id)
 VALUES
 (1, 1, 1),
