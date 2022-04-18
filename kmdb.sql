@@ -133,7 +133,92 @@ CREATE TABLE characters(
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
--- TODO! 
+INSERT INTO studios(
+id,
+name
+)
+VALUES(
+    1,
+    'Warner Bros'
+);
+
+INSERT INTO movies(
+    id,
+    title,
+    year_released,
+    MPAA_rating,
+    studio_id
+)
+VALUES(
+    1,
+    'Batman Begins',
+    '2005',
+    'PG-13',
+    1
+),
+(
+    2,
+    'The Dark Knight',
+    '2008',
+    'PG-13',
+    1
+),
+(
+    3,
+    'The Dark Knight Rises',
+    '2012',
+    'PG-13',
+    1
+);
+
+INSERT INTO actors(
+    id,
+    actor_name
+)
+VALUES(
+    1,
+    'Christian Bale'
+),
+(
+    2,
+    'Michael Caine'
+),
+(
+    3,
+    'Liam Neeson'
+),
+(
+    4, 
+    'Katie Holmes'
+),
+(
+    5,
+    'Gary Oldman'
+),
+(
+    6,
+    'Heath Ledger'
+),
+(
+    7,
+    'Aaron Eckhart'
+),
+(
+    8,
+    'Maggie Gyllenhaal'
+),
+(
+    9,
+    'Tom Hardy'
+),
+(
+    10,
+    'Joseph Gordon-Levitt'
+),
+(
+    11,
+    'Anne Hathaway'
+);
 
 -- Prints a header for the movies output
 .print "Movies"
